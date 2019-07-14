@@ -1,0 +1,5 @@
+Pregunta,Item1;Item2;Item3;Item4;Respuesta;fondo.png
+preg aaaa;item1;item2;item3;item4;2;duendebandera.png
+pregsas ;item1;item2;item3;item4;3;no.png
+preg addvv;item1;item2;item3;item4;4;duendetrevol.png
+preg adasas;item1;item2;item3;item4;2;si.png
