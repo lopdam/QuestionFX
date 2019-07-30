@@ -28,7 +28,7 @@ public class Ventana {
 
     private Pane pane;
 
-    private ImageView imagen;
+    //private ImageView imagen;
 
     private int ancho = 960;
     private int alto = 540;
@@ -46,7 +46,7 @@ public class Ventana {
             + "    -fx-background-radius: 9,8,5,4;\n"
             + "    -fx-padding: 15 30 15 30;\n"
             + "    -fx-font-family: \"Helvetica\";\n"
-            + "    -fx-font-size: 18px;\n"
+            + "    -fx-font-size: 20px;\n"
             + "    -fx-font-weight: bold;\n"
             + "    -fx-text-fill: #333333;\n"
             + "    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);\n"
@@ -62,19 +62,19 @@ public class Ventana {
     private String stlioText = "#text {\n"
             + "    -fx-font-family: \"Helvetica\";\n"
             + "    -fx-font-weight: bold;\n"
-            + "    -fx-font-size: 18px;\n"
+            + "    -fx-font-size: 22px;\n"
             + "}";
     private CheckBox checks[] = {it1, it2, it3, it4};
 
     private ImageView listo = new ImageView();
 
-    public Ventana(Stage s, String pregunta, String it1, String it2, String it3, String it4, int respuesta, String img) {
+    public Ventana(Stage s, String pregunta, String it1, String it2, String it3, String it4, int respuesta) {
         this.respuesta = respuesta;
-        this.pregunta.setText(pregunta);
-        this.it1.setText(it1);
-        this.it2.setText(it2);
-        this.it3.setText(it3);
-        this.it4.setText(it4);
+        this.pregunta.setText(restruc(pregunta));
+        this.it1.setText(restruc(it1));
+        this.it2.setText(restruc(it2));
+        this.it3.setText(restruc(it3));
+        this.it4.setText(restruc(it4));
         /////////////////////////
         //Style
         this.pregunta.setStyle(stlioText);
@@ -84,7 +84,7 @@ public class Ventana {
         this.it4.setStyle(stlioText);
         ///////////////////////////
         this.s = s;
-        imagen = new ImageView(new Image("/Recursos/" + img));
+        //imagen = new ImageView(new Image("/Recursos/" + img));
         root = new StackPane();
         pane = new Pane();
         scene = new Scene(root, ancho, alto);
@@ -92,18 +92,18 @@ public class Ventana {
         fondo.setFitHeight(alto);
         fondo.setFitWidth(ancho);
 
-        imagen.setFitHeight(350);
+        /*       imagen.setFitHeight(350);
         imagen.setFitWidth(400);
         imagen.setLayoutX(20);
         imagen.setLayoutY(100);
-
-        comprobar.setLayoutX(820);
-        comprobar.setLayoutY(245);
+         */
+        comprobar.setLayoutX(815);
+        comprobar.setLayoutY(255);
 
         previousBtn.setLayoutX(30);
-        previousBtn.setLayoutY(alto - 65);
+        previousBtn.setLayoutY(alto - 75);
 
-        nextBtn.setLayoutY(alto - 65);
+        nextBtn.setLayoutY(alto - 75);
         nextBtn.setLayoutX(ancho - 125);
 
         comprobar.setStyle(stilo);
@@ -112,39 +112,39 @@ public class Ventana {
         ////////////////////////////////////////////////////////
         //Preguntas y Respuestas set Layout
 
-        this.pregunta.setLayoutX(10);
-        this.pregunta.setLayoutY(10);
+        this.pregunta.setLayoutX(25);
+        this.pregunta.setLayoutY(30);
 
-        this.it1.setLayoutX(450);
+        this.it1.setLayoutX(50);
         this.it1.setLayoutY(100);
 
-        this.it2.setLayoutX(450);
+        this.it2.setLayoutX(50);
         this.it2.setLayoutY(140);
 
-        this.it3.setLayoutX(450);
+        this.it3.setLayoutX(50);
         this.it3.setLayoutY(180);
 
-        this.it4.setLayoutX(450);
+        this.it4.setLayoutX(50);
         this.it4.setLayoutY(220);
 
         ///////////////////////////////////////////////////////////
         //Img check ubication
-        listo.setLayoutX(520);
-        listo.setLayoutY(245);
+        listo.setLayoutX(515);
+        listo.setLayoutY(255);
 
         listo.setFitHeight(275);
         listo.setFitWidth(250);
         //Imagen Check
         listo.setImage(new Image("/Recursos/nones.png"));
         ////////////////////////////////////////////////////////
-        pane.getChildren().addAll(imagen, nextBtn, previousBtn, comprobar, this.pregunta, this.it1, this.it2, this.it3, this.it4, listo);
+        pane.getChildren().addAll(nextBtn, previousBtn, comprobar, this.pregunta,listo,this.it1, this.it2, this.it3, this.it4);
         root.getChildren().addAll(fondo, pane);
         Eventos();
 
     }
 
     private boolean verificar() {
-        return checks[respuesta].isSelected();
+        return checks[respuesta-1].isSelected();
     }
 
     private void Eventos() {
@@ -165,24 +165,28 @@ public class Ventana {
             it2.setSelected(false);
             it3.setSelected(false);
             it4.setSelected(false);
+            listo.setImage(new Image("/Recursos/nones.png"));
         });
 
         it2.setOnAction(value -> {
             it1.setSelected(false);
             it3.setSelected(false);
             it4.setSelected(false);
+            listo.setImage(new Image("/Recursos/nones.png"));
         });
 
         it3.setOnAction(value -> {
             it1.setSelected(false);
             it2.setSelected(false);
             it4.setSelected(false);
+            listo.setImage(new Image("/Recursos/nones.png"));
         });
 
         it4.setOnAction(value -> {
             it1.setSelected(false);
             it2.setSelected(false);
             it3.setSelected(false);
+            listo.setImage(new Image("/Recursos/nones.png"));
         });
 
         comprobar.setOnAction(value -> {
@@ -227,5 +231,20 @@ public class Ventana {
         it4.setSelected(false);
         listo.setImage(new Image("/Recursos/nones.png"));
     }
-
+    
+    @Override
+    public String toString(){
+    return this.pregunta.getText().substring(0,2);
+    
+    }
+    
+    private String restruc(String cadena){
+        
+        if(cadena.length()>=70){
+        cadena=cadena.substring(0,70)+"\n"+cadena.substring(70);
+        
+        }
+    
+    return cadena;
+    }
 }

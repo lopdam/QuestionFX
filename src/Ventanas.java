@@ -1,4 +1,8 @@
 
+
+import javafx.scene.control.ChoiceBox;
+
+
 /**
  *
  * @author roboto
@@ -6,6 +10,7 @@
 public class Ventanas {
 
     private Ventana first;
+    private ChoiceBox<Ventana> vents;
     private Ventana last;
     private int size;
 

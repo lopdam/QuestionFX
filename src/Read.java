@@ -23,10 +23,11 @@ public class Read {
 
             String linea = bf.readLine();
             linea = bf.readLine();
+            System.out.println(linea);
             while (linea != null) {
 
                 String cadena[] = linea.split(";");
-                Ventana v = new Ventana(s, cadena[0], cadena[1], cadena[2], cadena[3], cadena[4], Integer.parseInt(cadena[5]), cadena[6]);
+                Ventana v = new Ventana(s, cadena[0], cadena[1], cadena[2], cadena[3], cadena[4], Integer.parseInt(cadena[5]));
 
                 ventanas.add(v);
                 linea = bf.readLine();
