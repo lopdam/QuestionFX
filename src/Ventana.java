@@ -233,7 +233,7 @@ public class Ventana {
         checks[respuesta - 1].setSelected(true);
             }
         });
-        //Random Cuestion
+        //Random Cuestion to press img Scene setRandom
         listo.setOnMouseClicked(value->{
             
             Random r=new Random();
