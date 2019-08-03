@@ -11,7 +11,7 @@ Pregunta,Item1;Item2;Item3;Item4;Respuesta;fondo.png
 10. What is a traditional dish of Saint Patrick's Day?;Turkey;Corned beef;chicken;fish;2;
 11. What delicious fish would you often find swimming the waters of Ireland’s River Shannon?;Cod;Salmon;Prawns;Tuna;2;
 12. What  are crubeens?;a. Boiled pigs’ feet;b. Bread fried in bacon fat;c. A type of black pudding;d. Mashed potato with scallions;1;
-13. You offer someone a drink or food. They say “no, thanks”. What’s the correct reaction?;Assume that means they don’t wan’t anything;Double check with a friendly “are you sure?”;Double check. Then double check again. And again;Don’t take no for an answer. List every food and drink you could offer until they finally accept to eat or drink something.;1;
+13. You offer someone a drink or food. They say “no, thanks”. What’s the correct reaction?;Assume that means they don’t wan’t anything;Double check with a friendly “are you sure?”;Double check. Then double check again. And again;Don’t take no for an answer. List every food and drink you could offer until they finally accept to eat or drink something.;2;
 14. What ingredient go into Coddle?;Mashed potatoes, with kale or cabbage and spring onions;back bacon, with sliced potatoes, and onions;Lamb, potatoes, carrots and onions;N.A;2;
 15. Which condiment would we usually serve to flavour lamb with?;Cranberry Sauce;Mint Sauce;Mayonaisse;Mustard;2;
 16. Name the other ingredient in this popular homely Irish dish, ‘bacon and ___’;Beans;Carrots;Rice;Cabbage;4;
@@ -24,3 +24,11 @@ Pregunta,Item1;Item2;Item3;Item4;Respuesta;fondo.png
 23. Which beer do Irish people drink the most?;Guinness;Murphy's Irish Stout;O'Hara's Celtic Stout;Smithwick's;2;
 24. What kind of flavor does Smithwick's Irish Ale have?;A light and sweet flavor.;A sweet aromatic fruits and deep malt.;A deep, dark and satisfying flavor.;A coffee with traditional hops and tasty notes of licorice.;2;
 25. Which is the most popular bar in Ireland?;The Temple Bar, Dublin City. ... ;Mutton Lane Inn, Cork City. ... ;The Stag's Head, Dublin City.;N.A;1;
+26. What is the ‘special’ ingredient of the Irish cake?;a) Beer;b) Nuts;c) Vanilla;d) Grapes;1;
+27. What ingredient is the most important in the ‘Boxty’?;a) Carrots;b) Potatoes;c) Onions;d) Cherries;2;
+28. Where you can find a lobster salad?;a) South;b) North;c) West coast;d) East coast;3;
+29. Where is the Irish whiskey truffles recipe from?;a) Switzerland;b) England;c) Turkey;d) Italy;1;
+30. What is a traditional dish of Saint Patrick's Day?;a) Turkey;b) blood sausage;c) chicken;d) fish;2;
+31. What is the traditional drink of Saint Patrick's Day?;a) canelazo;b) vodka;c) green beer;d) chicha;3;
+32. What is the main food of St. Patrick's Day?;a) meats;b) sausages;c) vegetables;d) fruits;3;
+33. What is a traditional dish of Saint Patrick's Day?;a) Turkey;b) Corned beef;c) chicken;d) fish;2;

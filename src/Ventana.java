@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -45,8 +46,8 @@ public class Ventana {
             + "    -fx-background-insets: 0,1,4,5;\n"
             + "    -fx-background-radius: 9,8,5,4;\n"
             + "    -fx-padding: 15 30 15 30;\n"
-            + "    -fx-font-family: \"Helvetica\";\n"
-            + "    -fx-font-size: 20px;\n"
+            + "    -fx-font-family:  \"Roboto\", sans-serif;\n"
+            + "    -fx-font-size: 22px;\n"
             + "    -fx-font-weight: bold;\n"
             + "    -fx-text-fill: #333333;\n"
             + "    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);\n"
@@ -60,9 +61,16 @@ public class Ventana {
     private CheckBox it4 = new CheckBox();
 
     private String stlioText = "#text {\n"
-            + "    -fx-font-family: \"Helvetica\";\n"
+            + "    -fx-font-family:  \"Roboto\", sans-serif;\n"
             + "    -fx-font-weight: bold;\n"
-            + "    -fx-font-size: 22px;\n"
+            + "    -fx-font-size: 25px;\n"
+            + "    -color:#6B350B;\n"
+            + "}";
+        private String stlioTextTitle = "#text {\n"
+            + "    -fx-font-family:  \"Roboto\", sans-serif;\n"
+            + "    -fx-font-weight: bold;\n"
+            + "    -fx-font-size: 26px;\n"
+            + "    -color:#6B350B;\n"
             + "}";
     private CheckBox checks[] = {it1, it2, it3, it4};
 
@@ -77,11 +85,16 @@ public class Ventana {
         this.it4.setText(restruc(it4));
         /////////////////////////
         //Style
-        this.pregunta.setStyle(stlioText);
+        this.pregunta.setStyle(stlioTextTitle);
         this.it1.setStyle(stlioText);
         this.it2.setStyle(stlioText);
         this.it3.setStyle(stlioText);
         this.it4.setStyle(stlioText);
+        this.it1.setTextFill(Color.rgb(42,17,0));
+        this.it2.setTextFill(Color.rgb(42,17,0));
+        this.it3.setTextFill(Color.rgb(42,17,0));
+        this.it4.setTextFill(Color.rgb(42,17,0));
+        this.pregunta.setTextFill(Color.rgb(42,17,0));
         ///////////////////////////
         this.s = s;
         //imagen = new ImageView(new Image("/Recursos/" + img));
@@ -240,8 +253,8 @@ public class Ventana {
     
     private String restruc(String cadena){
         
-        if(cadena.length()>=70){
-        cadena=cadena.substring(0,70)+"\n"+cadena.substring(70);
+        if(cadena.length()>=64){
+        cadena=cadena.substring(0,64)+"\n"+cadena.substring(64);
         
         }
     
