@@ -1,4 +1,5 @@
 
+import java.util.Random;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -231,6 +232,20 @@ public class Ventana {
             Settear();
         checks[respuesta - 1].setSelected(true);
             }
+        });
+        //Random Cuestion
+        listo.setOnMouseClicked(value->{
+            
+            Random r=new Random();
+            int i=r.nextInt(32);
+            
+            Ventana v=this;
+            for(int j=1;j<i;j++){
+                v=v.getNext();
+            
+            }
+            Settear();
+            s.setScene(v.getScene());
         });
         
 
