@@ -30,7 +30,6 @@ public class Ventana {
     private Pane pane;
 
     //private ImageView imagen;
-
     private int ancho = 960;
     private int alto = 540;
 
@@ -66,7 +65,7 @@ public class Ventana {
             + "    -fx-font-size: 25px;\n"
             + "    -color:#6B350B;\n"
             + "}";
-        private String stlioTextTitle = "#text {\n"
+    private String stlioTextTitle = "#text {\n"
             + "    -fx-font-family:  \"Roboto\", sans-serif;\n"
             + "    -fx-font-weight: bold;\n"
             + "    -fx-font-size: 26px;\n"
@@ -75,6 +74,7 @@ public class Ventana {
     private CheckBox checks[] = {it1, it2, it3, it4};
 
     private ImageView listo = new ImageView();
+    private Button show = new Button("✔");
 
     public Ventana(Stage s, String pregunta, String it1, String it2, String it3, String it4, int respuesta) {
         this.respuesta = respuesta;
@@ -90,11 +90,11 @@ public class Ventana {
         this.it2.setStyle(stlioText);
         this.it3.setStyle(stlioText);
         this.it4.setStyle(stlioText);
-        this.it1.setTextFill(Color.rgb(42,17,0));
-        this.it2.setTextFill(Color.rgb(42,17,0));
-        this.it3.setTextFill(Color.rgb(42,17,0));
-        this.it4.setTextFill(Color.rgb(42,17,0));
-        this.pregunta.setTextFill(Color.rgb(42,17,0));
+        this.it1.setTextFill(Color.rgb(42, 17, 0));
+        this.it2.setTextFill(Color.rgb(42, 17, 0));
+        this.it3.setTextFill(Color.rgb(42, 17, 0));
+        this.it4.setTextFill(Color.rgb(42, 17, 0));
+        this.pregunta.setTextFill(Color.rgb(42, 17, 0));
         ///////////////////////////
         this.s = s;
         //imagen = new ImageView(new Image("/Recursos/" + img));
@@ -110,6 +110,7 @@ public class Ventana {
         imagen.setLayoutX(20);
         imagen.setLayoutY(100);
          */
+        //Btn Pos X and Y
         comprobar.setLayoutX(815);
         comprobar.setLayoutY(255);
 
@@ -119,9 +120,16 @@ public class Ventana {
         nextBtn.setLayoutY(alto - 75);
         nextBtn.setLayoutX(ancho - 125);
 
+        show.setLayoutX(50);
+        show.setLayoutY(270);
+
+        ///Btn Style
         comprobar.setStyle(stilo);
+        
         nextBtn.setStyle(stilo);
         previousBtn.setStyle(stilo);
+        //not use style in show btn because the raliton not is good
+        //show.setStyle(stilo);
         ////////////////////////////////////////////////////////
         //Preguntas y Respuestas set Layout
 
@@ -150,14 +158,14 @@ public class Ventana {
         //Imagen Check
         listo.setImage(new Image("/Recursos/nones.png"));
         ////////////////////////////////////////////////////////
-        pane.getChildren().addAll(nextBtn, previousBtn, comprobar, this.pregunta,listo,this.it1, this.it2, this.it3, this.it4);
+        pane.getChildren().addAll(nextBtn, previousBtn, comprobar, show, this.pregunta, listo, this.it1, this.it2, this.it3, this.it4);
         root.getChildren().addAll(fondo, pane);
         Eventos();
 
     }
 
     private boolean verificar() {
-        return checks[respuesta-1].isSelected();
+        return checks[respuesta - 1].isSelected();
     }
 
     private void Eventos() {
@@ -214,6 +222,17 @@ public class Ventana {
             }
 
         });
+        //show btn view answer
+        show.setOnAction(value->{
+            if(checks[respuesta - 1].isSelected()){
+            Settear();
+            }
+            else{
+            Settear();
+        checks[respuesta - 1].setSelected(true);
+            }
+        });
+        
 
     }
 
@@ -244,20 +263,20 @@ public class Ventana {
         it4.setSelected(false);
         listo.setImage(new Image("/Recursos/nones.png"));
     }
-    
+
     @Override
-    public String toString(){
-    return this.pregunta.getText().substring(0,2);
-    
+    public String toString() {
+        return this.pregunta.getText().substring(0, 2);
+
     }
-    
-    private String restruc(String cadena){
-        
-        if(cadena.length()>=64){
-        cadena=cadena.substring(0,64)+"\n"+cadena.substring(64);
-        
+
+    private String restruc(String cadena) {
+
+        if (cadena.length() >= 64) {
+            cadena = cadena.substring(0, 64) + "\n" + cadena.substring(64);
+
         }
-    
-    return cadena;
+
+        return cadena;
     }
 }

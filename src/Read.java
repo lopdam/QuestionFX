@@ -23,7 +23,7 @@ public class Read {
 
             String linea = bf.readLine();
             linea = bf.readLine();
-            System.out.println(linea);
+            //System.out.println(linea);
             while (linea != null) {
 
                 String cadena[] = linea.split(";");
